@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext)
+  const { createUser } = useContext(AuthContext);
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -14,12 +14,12 @@ const SignUp = () => {
     const password = form.password.value;
     const confirmPassword = form.confirm.value;
     console.log(email, name, password, confirmPassword);
-    
+
     createUser(email, password)
-    .then(result=>{
+      .then((result) => {
         console.log(result.user);
-    })
-    .catch(error=> console.log(error.message))
+      })
+      .catch((error) => console.log(error.message));
   };
   return (
     <div className="hero min-h-screen">
